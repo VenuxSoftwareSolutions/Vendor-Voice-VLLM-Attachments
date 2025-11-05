@@ -28,7 +28,7 @@ COPY requirements.txt .
 # Create a virtual environment using uv and install deps
 RUN uv venv /venv && \
     . /venv/bin/activate && \
-    uv pip install -r requirements.txt
+    uv pip install -r updated_requirements.txt
 
 # Add venv to PATH
 ENV PATH="/venv/bin:$PATH"
