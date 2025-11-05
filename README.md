@@ -16,7 +16,7 @@ FastAPI service that accepts multiple user uploads, converts them to PDF when ne
 ```bash
 python -m venv .venv
 .venv\\Scripts\\activate  # Windows
-pip install -r requirements.txt
+pip install -r updated_requirements.txt
 ```
 
 ## Configuration
@@ -39,7 +39,7 @@ The service will be available at `http://localhost:8000`.
 | GET | `/health` | Basic readiness probe. |
 | POST | `/api/v1/documents/analyze` | Convert uploads to PDF and request an OpenAI analysis. |
 
-### POST `/api/v1/documents/analyze`
+### POST `/api/v1/analyze`
 - **Content type:** `multipart/form-data`
 - **Body fields:**
   - `prompt` (text): instruction for the model. (Use the default)
@@ -90,7 +90,7 @@ The service will be available at `http://localhost:8000`.
 - Plain text files are rendered to PDF.
 
 ## Postman Usage
-1. Open Postman and create a new `POST` request to `http://localhost:8000/api/v1/documents/analyze`.
+1. Open Postman and create a new `POST` request to `http://localhost:8000/api/v1/analyze`.
 2. Under the **Body** tab, select **form-data**.
 3. Add a key `prompt` (type `Text`) with your instruction.
 4. Add one or more keys named `attachments` (type `File`) and choose local files to upload. Postman will automatically send all with the same key.
