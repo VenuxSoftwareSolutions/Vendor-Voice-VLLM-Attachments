@@ -1,0 +1,46 @@
+# ----------------------------
+# Ignore Python cache & virtualenv
+# ----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+
+# ----------------------------
+# Ignore virtual environments
+# ----------------------------
+VE_vllm/
+
+# ----------------------------
+# Ignore environment and local files
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------
+# Ignore development folders
+# ----------------------------
+.git
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+
+# ----------------------------
+# Ignore local data, logs, and build artifacts
+# ----------------------------
+logs/
+data/
+*.bak
+*.tmp
+
+# ----------------------------
+# Ignore OS-specific files
+# ----------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
