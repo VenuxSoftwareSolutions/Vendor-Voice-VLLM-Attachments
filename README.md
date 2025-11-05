@@ -47,27 +47,33 @@ The service will be available at `http://localhost:8000`.
 - **Response:**
 ```json
 {
-  "model": "gpt-5-mini",
-  "prompt_used": "Give me relevant info that I will pass to voice agent to help fix customer issue.",
-  "output_text": "Extracted information from the attachment: In the first attachment, I found: A popup titled 'Default Shipping Configuration' ... Overall issue: product cannot be submitted because required shipping configuration / item_shipping field and the quantity range 1000–9999 are missing.",
-  "files": [
-    {
-      "original_filename": "Shipping config.png",
-      "original_mime": "image/png",
-      "converted_filename": "Shipping config.pdf",
-      "converted_bytes": 116314,
-      "openai_file_id": "file-SviF5VYFX9afveTsKzBYM"
-    },
-    {
-      "original_filename": "9999.jpg",
-      "original_mime": "image/jpeg",
-      "converted_filename": "9999.pdf",
-      "converted_bytes": 39952,
-      "openai_file_id": "file-XS3Swq8aRaVGNib2beiEz"
-    }
-  ]
-}
-
+    "model": "gpt-5-mini",
+    "prompt_used": "Give me relevant info that I will pass to voice agent to help fix customer issue.",
+    "output_text": "Extracted information from the attachment: In the first attachment, I found:\n- A modal titled \"Default Shipping Configuration.\"\n- Message: there are no warehouses configured for shipping. It says you can create warehouses on the Warehouses page under Inventory Management, or save the product as a draft and then continue editing after creating warehouses.\n- The shipping setup UI is visible (shipper, from/to city, estimated days, policy fields).\n\nIn the second attachment, I found:\n- A validation popup: \"Please fill the missing fields and/or correct the listed entries in order to submit your product for approval.\"\n- Specific error: \"There is an issue with your shipping configuration: quantities from 1000 to 9999 are not covered. (in default shipping config)\"\n\nIn the third attachment, I found:\n- Two red error banners: \"The item_shipping field is required.\" and \"The tax_shipping field is required.\"\n- The Add Product form with Product Name shown as \"PRIOR Wall Light Sandy Dark Grey Aluminum.\"\n- The page includes product info fields (brand, tags) and a \"Preview Product\" button at top.\n\nUse these exact issues and product name when speaking to the customer.",
+    "files": [
+        {
+            "original_filename": "Shipping config.png",
+            "original_mime": "image/png",
+            "converted_filename": "Shipping config.pdf",
+            "converted_bytes": 116314,
+            "openai_file_id": "file-KfYQBMbKzV5AMtUxbY6Zfe"
+        },
+        {
+            "original_filename": "9999.jpg",
+            "original_mime": "image/jpeg",
+            "converted_filename": "9999.pdf",
+            "converted_bytes": 39952,
+            "openai_file_id": "file-ULqgfpaY3eigCv1g76REVq"
+        },
+        {
+            "original_filename": "bulk upload.png",
+            "original_mime": "image/png",
+            "converted_filename": "bulk upload.pdf",
+            "converted_bytes": 63564,
+            "openai_file_id": "file-FAMYV7S6zco2f1WDFcgyha"
+        }
+    ],
+    "request_id": "3471a77d"
 }
 ```
 
