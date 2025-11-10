@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 register_exception_handlers(app)
-app.include_router(analyze_router, prefix="/v1")
+app.include_router(analyze_router, prefix="/api/v1")
 
 @app.get("/health")
 async def health():

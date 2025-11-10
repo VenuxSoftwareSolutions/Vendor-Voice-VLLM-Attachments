@@ -16,20 +16,20 @@ FastAPI service that accepts multiple user uploads, converts them to PDF when ne
 ```bash
 python -m venv .venv
 .venv\\Scripts\\activate  # Windows
-pip install -r updated_requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Configuration
 Create a `.env` file in the project root:
 ```env
 OPENAI_API_KEY=sk-...
-FASTAPI_SECRET_KEY=
+FASTAPI_SECRET_KEY=MO-VLLM-sdhUIDM19402KLOSN
 ```
 
 ## Running the API
 Start the FastAPI app with Uvicorn:
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 The service will be available at `http://localhost:8000`.
 
@@ -90,7 +90,7 @@ The service will be available at `http://localhost:8000`.
 - Plain text files are rendered to PDF.
 
 ## Postman Usage
-1. Open Postman and create a new `POST` request to `http://localhost:8000/api/v1/analyze`.
+1. Open Postman and create a new `POST` request to `http://localhost:8000/api/v1/analyze` or to `http://staging.caestro.com:8005/v1/analyze` to test in staging.
 2. Under the **Body** tab, select **form-data**.
 3. Add a key `prompt` (type `Text`) with your instruction.
 4. Add one or more keys named `attachments` (type `File`) and choose local files to upload. Postman will automatically send all with the same key.
