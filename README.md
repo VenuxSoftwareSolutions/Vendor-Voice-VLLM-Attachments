@@ -40,10 +40,25 @@ The service will be available at `http://localhost:8000`.
 | POST | `/api/v1/documents/analyze` | Convert uploads to PDF and request an OpenAI analysis. |
 
 ### POST `/api/v1/analyze`
+### Required Headers
+
+When sending requests (via Postman, curl, or another client), make sure to include the following headers:
+
+| Key | Value |
+|------|--------|
+| `x-api-key` | `MO-VLLM-sdhUIDM19402KLOSN` |
+| `accept` | `application/json` |
+
+These headers authenticate your request and specify that responses will be in JSON format.
+
+#### In Postman
+1. Go to the **Headers** tab.  
+2. Add a key named `x-api-key` and paste the value above.  
+3. Add another key named `accept` with the value `application/json`.
 - **Content type:** `multipart/form-data`
 - **Body fields:**
   - `prompt` (text): instruction for the model. (Use the default)
-  - `attachments` (file, repeatable): one or more files. Accepts PDFs, PNG/JPEG/WebP/TIFF/BMP images, and plain text.
+  - `files` (file, repeatable): one or more files. Accepts PDFs, PNG/JPEG/WebP/TIFF/BMP images.
 - **Response:**
 ```json
 {
@@ -87,7 +102,7 @@ The service will be available at `http://localhost:8000`.
 ## Supported Conversions
 - PDFs are passed through unchanged.
 - Images (`png`, `jpg/jpeg`, `webp`, `tiff`, `bmp`) are flattened to PDF.
-- Plain text files are rendered to PDF.
+
 
 ## Postman Usage
 1. Open Postman and create a new `POST` request to `http://localhost:8000/api/v1/analyze` or to `http://staging.caestro.com:8005/v1/analyze` to test in staging.
